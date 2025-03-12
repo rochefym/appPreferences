@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Application Settings
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,8 +13,60 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label>Option 1</ion-label>
+    <ion-toggle [(ngModel)]="isFeatureEnabled1"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Option 2</ion-label>
+    <ion-toggle [(ngModel)]="isFeatureEnabled2"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Option 3</ion-label>
+    <ion-toggle [(ngModel)]="isFeatureEnabled3"></ion-toggle>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Range</ion-label>
+    <ion-range [(ngModel)]="rangeNo" min="0" max="100" step="1" snaps="true">
+    </ion-range>
+  </ion-item>
+  <p>Value: {{ rangeNo }}</p>
+
+
+  <ion-item>
+    <ion-label>Checkbox 1</ion-label>
+    <ion-checkbox [(ngModel)]="isChecked1"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Checkbox 2</ion-label>
+    <ion-checkbox [(ngModel)]="isChecked2"></ion-checkbox>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Checkbox 3</ion-label>
+    <ion-checkbox [(ngModel)]="isChecked3"></ion-checkbox>
+  </ion-item>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Radio Option 1</ion-label>
+      <ion-radio slot="start" value="option1" [(ngModel)]="selectedOption"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Radio Option 2</ion-label>
+      <ion-radio slot="start" value="option2" [(ngModel)]="selectedOption"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="resetValues()">RESET ALL SETTINGS</ion-button>
+
+
 </ion-content>
+
